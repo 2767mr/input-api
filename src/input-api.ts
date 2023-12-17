@@ -1,9 +1,11 @@
-import { ig, sc } from 'ultimate-crosscode-typedefs';
+import 'ultimate-crosscode-typedefs';
 
 export function registerInput(name: string, defaultKey1: ig.KEY, defaultKey2?: ig.KEY) {
     if (!('sc' in globalThis)) {
         throw new Error("registerOptions must be called in postload or later");
     }
+
+    const { ig, sc } = window;
 
     if (name.startsWith('keys-')) {
         name = name.slice(5);
@@ -78,5 +80,6 @@ export function registerInputLabel(internalName: string, label: string) {
         throw new Error("registerOptions must be called in postload or later");
     }
 
+    const { ig } = window;
     ig.lang.labels.sc.gui.options.controls.keys[internalName] = label;
 }
