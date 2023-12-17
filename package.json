@@ -4,6 +4,18 @@
   "description": "Allows mods to add rebindable key bindings",
   "license": "MIT",
   "homepage": "https://github.com/dmitmel/input-api",
-  "module": true,
-  "postload": "postload.js"
+  "preload": "not-a-mod.js",
+  "main": "dist/input-api.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w",
+    "prepare": "tsc"
+  },
+  "ccmodDependencies": {},
+  "dependencies": {
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "ultimate-crosscode-typedefs": "github:CCDirectLink/ultimate-crosscode-typedefs"
+  }
 }

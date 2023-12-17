@@ -1,0 +1,1 @@
+console.error("This version of input-api is not a mod.");
